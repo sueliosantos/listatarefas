@@ -21,6 +21,8 @@ public class TesteDeletePessoa {
 		
 		System.out.println("Excluído com sucesso");
 		
+		//classe de teste
+		
 	}
 
 }
