@@ -20,9 +20,7 @@ public class TesteDeletePessoa {
 		genericDao.delete(pessoa);
 		
 		System.out.println("Excluído com sucesso");
-		
-		//classe de teste
-		
+	
 	}
 
 }
