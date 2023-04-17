@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:breadCrumb>
+			<p:menuitem />
+			<p:menuitem value="Usuários" action="index.jsf" />
+			<p:menuitem value="Tarefas" action="tarafa.jsf" />
+		</p:breadCrumb>
+	</h:form>
+
+	<h:form>
+		<p:panelGrid columns="2">
+			<h:outputLabel>Título</h:outputLabel>
+			<p:inputText readonly="true" value="#{tarefaBean.tarefa.titulo}" />
+
+			<h:outputLabel>Descrição</h:outputLabel>
+			<p:inputTextarea rows="10" cols="50"
+				value="#{tarefaBean.tarefa.descricao}" />
+		</p:panelGrid>
+
+		<p:panelGrid columns="4">
+			<h:outputLabel>Responsável</h:outputLabel>
+			<p:inputText readonly="true" value="#{tarefaBean.tarefa.titulo}" />
+
+			<h:outputLabel>Prioridade</h:outputLabel>
+			<p:selectOneMenu id="option" value="#{tarefaBean.tarefa.prioridade}">
+				<f:selectItem itemLabel="ALTA" itemValue="ALTA" />
+				<f:selectItem itemLabel="MÉDIA" itemValue="MÉDIA" />
+				<f:selectItem itemLabel="BAIXA" itemValue="BAIXA" />
+			</p:selectOneMenu>
+
+		</p:panelGrid>
+		
+		<p:panelGrid columns="2">
+			<h:outputLabel>Deadline</h:outputLabel>
+			<p:inputText readonly="true" value="#{tarefaBean.tarefa.deadline}" />
+		</p:panelGrid>
+		<br />
+		<br />
+
+		<h:panelGrid columns="4" cellpadding="2" cellspacing="2">
+			<p:commandButton value="Salvar" action="#{tarefaBean.salvar}" />
+			<p:commandButton value="Novo" action="#{tarefaBean.novoCadastro}" />
+		</h:panelGrid>
+
+
+
+		<br />
+		<br />
+
+
+
+	</h:form>
+</h:body>
+</html>
