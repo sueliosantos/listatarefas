@@ -27,6 +27,10 @@ public class Tarefa {
 	@Column(nullable = false)
 	private String prioridade;
 	
+	@Column(nullable = false)
+	private String situacao;
+	
+	
 	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	private UsuarioPessoa usuarioPessoa;
 
@@ -78,10 +82,18 @@ public class Tarefa {
 		this.usuarioPessoa = usuarioPessoa;
 	}
 
+	public String getSituacao() {
+		return situacao;
+	}
+
+	public void setSituacao(String situacao) {
+		this.situacao = situacao;
+	}
+	
 	@Override
 	public String toString() {
 		return "Tarefa [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + ", deadline=" + deadline
-				+ ", prioridade=" + prioridade + ", usuarioPessoa=" + usuarioPessoa + "]";
+				+ ", prioridade=" + prioridade + ", situacao=" + situacao + ", usuarioPessoa=" + usuarioPessoa + "]";
 	}
 	
 

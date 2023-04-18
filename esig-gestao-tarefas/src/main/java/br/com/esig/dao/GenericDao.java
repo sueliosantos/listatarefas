@@ -51,11 +51,23 @@ public class GenericDao<E> {
 		EntityTransaction transction = entityManager.getTransaction();
 		transction.begin();
 		
+		@SuppressWarnings("unchecked")
 		java.util.List<E> lista = entityManager.createQuery("from " + entidade.getName() + " order by id desc").getResultList();
 		
 		transction.commit();
 		
 		return lista;
+	}
+	
+	public Object find(Class<E> entidade, String id){
+		EntityTransaction transction = entityManager.getTransaction();
+		transction.begin();
+		
+		Object obj  = entityManager.createQuery("from " + entidade.getName() + " where id = " + Long.parseLong(id));
+		
+		transction.commit();
+		
+		return obj;
 	}
 	
 	public EntityManager getEntityManager() {

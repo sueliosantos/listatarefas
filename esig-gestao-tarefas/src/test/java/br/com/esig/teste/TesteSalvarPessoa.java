@@ -14,7 +14,6 @@ public class TesteSalvarPessoa {
 		UsuarioPessoa pessoa = new UsuarioPessoa();
 		
 		pessoa.setNome("João Maria");
-		pessoa.setIdade(39);
 		pessoa.setEmail("jm@gmail.com");
 		pessoa.setLogin("jm");
 		pessoa.setSenha("123456");

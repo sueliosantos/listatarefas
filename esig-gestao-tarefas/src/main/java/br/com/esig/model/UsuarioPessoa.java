@@ -19,7 +19,7 @@ public class UsuarioPessoa {
 	private String login;
 	private String senha;
 	private String email;
-	private int idade;
+	
 	
 	public Long getId() {
 		return id;
@@ -51,17 +51,7 @@ public class UsuarioPessoa {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getIdade() {
-		return idade;
-	}
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-	@Override
-	public String toString() {
-		return "UsuarioPessoa [id=" + id + ", Nome=" + Nome + ", login=" + login + ", senha=" + senha + ", email="
-				+ email + ", idade=" + idade + "]";
-	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -76,5 +66,10 @@ public class UsuarioPessoa {
 			return false;
 		UsuarioPessoa other = (UsuarioPessoa) obj;
 		return Objects.equals(id, other.id);
+	}
+	@Override
+	public String toString() {
+		return "UsuarioPessoa [id=" + id + ", Nome=" + Nome + ", login=" + login + ", senha=" + senha + ", email="
+				+ email + "]";
 	}
 }

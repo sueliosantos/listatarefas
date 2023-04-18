@@ -17,7 +17,6 @@ public class TesteUpdatePessoa {
 		pessoa = genericDao.pesquisar(pessoa);
 		
 		pessoa.setNome("Giovanna Massa");
-		pessoa.setIdade(12);
 		pessoa.setEmail("gigimassa@gmail.com");
 		
 		pessoa =  genericDao.updateMarge(pessoa);

@@ -15,7 +15,7 @@ public class TesteSalvarTarefa {
 		
 		UsuarioPessoa pessoa = new UsuarioPessoa();
 		
-		pessoa.setId(1L);
+		pessoa.setId(109L);
 		pessoa = daoPessoa.pesquisar(pessoa);
 		
 		Tarefa tarefa = new Tarefa();
@@ -23,8 +23,9 @@ public class TesteSalvarTarefa {
 		tarefa.setDescricao("tarefa teste");
 		tarefa.setPrioridade("ALTA");
 		tarefa.setTitulo("TAREFA 1");
+		tarefa.setSituacao("ANDAMENTO");
 		tarefa.setUsuarioPessoa(pessoa);
-		tarefa.setDeadline(":)");
+		tarefa.setDeadline("1");
 		
 		genericDao.salvar(tarefa);
 	}
