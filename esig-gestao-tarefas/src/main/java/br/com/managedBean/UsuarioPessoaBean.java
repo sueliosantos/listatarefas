@@ -76,5 +76,4 @@ public class UsuarioPessoaBean {
 		context.renderResponse();
 	}
 	
-
 }

@@ -42,15 +42,15 @@
 				<h:outputLabel>Prioridade</h:outputLabel>
 				<p:selectOneMenu id="prioridade"
 					value="#{tarefaBean.tarefa.prioridade}">
-					<f:selectItem itemLabel="ALTA" itemValue="ALTA" />
-					<f:selectItem itemLabel="MEDIA" itemValue="MÉDIA" />
-					<f:selectItem itemLabel="BAIXA" itemValue="BAIXA" />
+					<f:selectItems value="#{tarefaBean.prioridades}" 
+						var="p" itemValue="#{p}" itemLabel="#{p.descricao}"/>
 				</p:selectOneMenu>
 
 				<h:outputLabel>Situação</h:outputLabel>
-				<p:selectOneMenu id="situacao" value="#{tarefaBean.tarefa.situacao}">
-					<f:selectItem itemLabel="EM ANDAMENTO" itemValue="EM ANDAMENTO" />
-					<f:selectItem itemLabel="CONCLUÍDA" itemValue="CONCLUIDA" />
+				<p:selectOneMenu id="situacao"
+					value="#{tarefaBean.tarefa.situacao}">
+					<f:selectItems value="#{tarefaBean.situacoes}" 
+						var="p" itemValue="#{p}" itemLabel="#{p.descricao}"/>
 				</p:selectOneMenu>
 				<h:outputLabel>Deadline</h:outputLabel>
 				<p:inputMask id="date" value="#{tarefaBean.tarefa.deadline}"

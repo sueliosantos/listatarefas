@@ -13,6 +13,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 
 import br.com.esig.dao.GenericDao;
+import br.com.esig.enums.PrioridadaEnum;
+import br.com.esig.enums.SituacaoEnum;
 import br.com.esig.model.Tarefa;
 import br.com.esig.model.UsuarioPessoa;
 
@@ -35,7 +37,7 @@ public class TarefaBean {
 	
 	@SuppressWarnings("unchecked")
 	private void atualizaTarefasTela() {
-		list  = dao.getEntityManager().createQuery("from Tarefa t where t.situacao = 'EM ANDAMENTO' ").getResultList();
+		list  = dao.getEntityManager().createQuery("from Tarefa t where t.situacao = 'EMANDAMENTO' ").getResultList();
 	}
 	 
 	private void preencherLista() {
@@ -118,7 +120,7 @@ public class TarefaBean {
             throw new IllegalArgumentException("no id provided");
         }
         for (UsuarioPessoa usuario : listUsuarioPessoa){
-            if (id == usuario.getId()){
+            if (id.equals(new Long(usuario.getId()))){
                 return usuario;
             }
         }
@@ -140,5 +142,14 @@ public class TarefaBean {
 	public void setListUsuarioPessoa(List<UsuarioPessoa> listUsuarioPessoa) {
 		this.listUsuarioPessoa = listUsuarioPessoa;
 	}
+	
+	public PrioridadaEnum[] getPrioridades() {
+		return PrioridadaEnum.values();
+	}
+	
+	public SituacaoEnum[] getSituacoes() {
+		return SituacaoEnum.values();
+	}
+	
 }
 	

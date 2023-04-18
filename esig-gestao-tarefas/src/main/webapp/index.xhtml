@@ -63,16 +63,16 @@
 				paginator="true" rows="5" paginatorPosition="bottom"
 				style="width:70%;" cellpadding="10">
 				<br />
-				<p:column headerText="Id" width="20">
+				<p:column headerText="Id" sortBy="#{user.id}" filterBy="#{user.id}" width="20">
 					<h:outputText value="#{user.id}" />
 				</p:column>
-				<p:column headerText="Nome" width="200">
+				<p:column headerText="Nome" sortBy="#{user.nome}" filterBy="#{user.nome}" width="200">
 					<h:outputText value="#{user.nome}" />
 				</p:column>
-				<p:column headerText="Login" width="100">
+				<p:column headerText="Login" sortBy="#{user.login}" filterBy="#{user.login}" width="100">
 					<h:outputText value="#{user.login}" />
 				</p:column>
-				<p:column headerText="Email" width="200">
+				<p:column headerText="Email" sortBy="#{user.email}" filterBy="#{user.email}" width="200">
 					<h:outputText value="#{user.email}" />
 				</p:column>
 
