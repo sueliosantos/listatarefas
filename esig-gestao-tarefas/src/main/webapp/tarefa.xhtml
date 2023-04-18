@@ -20,7 +20,7 @@
 			<p:messages id="messages" showDetail="true" closable="true">
 				<p:autoUpdate />
 			</p:messages>
-			<p:panelGrid columns="2" style="width:60%;">
+			<p:panelGrid columns="2" style="width:70%;">
 				<h:outputLabel>Título</h:outputLabel>
 				<p:inputText value="#{tarefaBean.tarefa.titulo}" required="true"
 					requiredMessage="Informe o título!" />
@@ -75,21 +75,18 @@
 		<h:form id="formListagem">
 			<p:dataTable value="#{tarefaBean.list}" var="tarefa" paginator="true"
 				rows="5" paginatorPosition="bottom" cellpadding="10"
-				style="width:60%;">
+				style="width:70%;">
 
-				<p:column headerText="Id" width="15">
-					<h:outputText value="#{tarefa.id}" />
-				</p:column>
-				<p:column headerText="Título" width="100">
+				 <p:column headerText="Titulo" sortBy="#{tarefa.titulo}" filterBy="#{tarefa.titulo}" width="100">
 					<h:outputText value="#{tarefa.titulo}" />
 				</p:column>
-				<p:column headerText="Responsável" width="200">
+				 <p:column headerText="Responsável" sortBy="#{tarefa.usuarioPessoa.nome}" filterBy="#{tarefa.usuarioPessoa.nome}" width="200">
 					<h:outputText value="#{tarefa.usuarioPessoa.nome}" />
 				</p:column>
-				<p:column headerText="Deadline" width="30">
+				<p:column headerText="Deadline" sortBy="#{tarefa.deadline}" filterBy="#{tarefa.deadline}" width="50">
 					<h:outputText value="#{tarefa.deadline}" />
 				</p:column>
-				<p:column headerText="Prioridade" width="30">
+				<p:column headerText="Prioridade" sortBy="#{tarefa.prioridade}" filterBy="#{tarefa.prioridade}" width="100">
 					<h:outputText value="#{tarefa.prioridade}" />
 				</p:column>
 				<p:column headerText="Editar" width="15">

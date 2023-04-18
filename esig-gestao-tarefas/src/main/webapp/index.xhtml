@@ -23,24 +23,25 @@
 			<p:messages id="messages" showDetail="true" closable="true">
 				<p:autoUpdate />
 			</p:messages>
-			<br/>
-			<h:panelGrid columns="2" >
+			<br />
+			<h:panelGrid columns="2">
 				<p:outputLabel>Id: </p:outputLabel>
 				<p:inputText readonly="true" value="#{usuarioPessoaBean.usuario.id}" />
-	
+
 				<p:outputLabel>Nome: </p:outputLabel>
 				<p:inputText value="#{usuarioPessoaBean.usuario.nome}"
-					required="true" requiredMessage="Informe o nome!" />
-	
+					required="true" requiredMessage="Informe o nome!" style="width:500px;"/>
+
 				<p:outputLabel>Email</p:outputLabel>
 				<p:inputText value="#{usuarioPessoaBean.usuario.email}"
-					required="true" requiredMessage="Informe o email!" />
-	
+					required="true" requiredMessage="Informe o email!" style="width:500px;"/>
+
 				<p:outputLabel>Login</p:outputLabel>
-				<p:inputText value="#{usuarioPessoaBean.usuario.login}" required="true" requiredMessage="Informe o login!" />
-	
+				<p:inputText value="#{usuarioPessoaBean.usuario.login}"
+					required="true" requiredMessage="Informe o login!" style="width:500px;"/>
+
 				<p:outputLabel>Senha</p:outputLabel>
-				<p:password value="#{usuarioPessoaBean.usuario.senha}" />
+				<p:password value="#{usuarioPessoaBean.usuario.senha}" style="width:500px;"/>
 			</h:panelGrid>
 			<br />
 			<br />
@@ -50,52 +51,53 @@
 				<p:commandButton value="Novo" ajax="false" immediate="true"
 					action="#{usuarioPessoaBean.novo}" />
 			</h:panelGrid>
-	
-	
+
+
 			<br />
 			<br />
 		</h:form>
 	</div>
 	<div align="center">
-	<h:form id="formListagem">
-		<p:dataTable value="#{usuarioPessoaBean.list}" var="user" paginator="true" rows="5" paginatorPosition="bottom"
-		style="width:60%;"
-			cellpadding="10">
+		<h:form id="formListagem">
+			<p:dataTable value="#{usuarioPessoaBean.list}" var="user"
+				paginator="true" rows="5" paginatorPosition="bottom"
+				style="width:70%;" cellpadding="10">
+				<br />
+				<p:column headerText="Id" width="20">
+					<h:outputText value="#{user.id}" />
+				</p:column>
+				<p:column headerText="Nome" width="200">
+					<h:outputText value="#{user.nome}" />
+				</p:column>
+				<p:column headerText="Login" width="100">
+					<h:outputText value="#{user.login}" />
+				</p:column>
+				<p:column headerText="Email" width="200">
+					<h:outputText value="#{user.email}" />
+				</p:column>
 
-			<p:column headerText="Id" width="20">
-				<h:outputText value="#{user.id}" />
-			</p:column>
-			<p:column headerText="Nome" width="200">
-				<h:outputText value="#{user.nome}" />
-			</p:column>
-			<p:column headerText="Login" width="100">
-				<h:outputText value="#{user.login}" />
-			</p:column>
-			<p:column headerText="Email" width="200">
-				<h:outputText value="#{user.email}" />
-			</p:column>
+				<p:column headerText="Editar" width="15">
+					<h:commandLink immediate="true" id="btnEditar">
+						<h:graphicImage url="resources/img/edit.png" width="25"
+							height="25" />
+						<f:setPropertyActionListener value="#{user}"
+							target="#{usuarioPessoaBean.usuario}" />
+						<f:ajax execute="btnEditar" render=":formCadastro" />
+					</h:commandLink>
+				</p:column>
 
-			<p:column headerText="Editar" width="15">
-				<h:commandLink immediate="true" id="btnEditar">
-					<h:graphicImage url="resources/img/edit.png" width="25" height="25" />
-					<f:setPropertyActionListener value="#{user}"
-						target="#{usuarioPessoaBean.usuario}" />
-					<f:ajax execute="btnEditar" render=":formCadastro" />
-				</h:commandLink>
-			</p:column>
-
-			<p:column headerText="Excluir" width="15">
-				<h:commandLink action="#{usuarioPessoaBean.delete}" immediate="true"
-					id="btnRemover">
-					<h:graphicImage url="resources/img/excluir.png" width="25"
-						height="25" />
-					<f:setPropertyActionListener value="#{user}"
-						target="#{usuarioPessoaBean.usuario}" />
-					<f:ajax execute="btnRemover" render="@form :formCadastro:msg" />
-				</h:commandLink>
-			</p:column>
-		</p:dataTable>
-	</h:form>
+				<p:column headerText="Excluir" width="15">
+					<h:commandLink action="#{usuarioPessoaBean.delete}"
+						immediate="true" id="btnRemover">
+						<h:graphicImage url="resources/img/excluir.png" width="25"
+							height="25" />
+						<f:setPropertyActionListener value="#{user}"
+							target="#{usuarioPessoaBean.usuario}" />
+						<f:ajax execute="btnRemover" render="@form :formCadastro:msg" />
+					</h:commandLink>
+				</p:column>
+			</p:dataTable>
+		</h:form>
 	</div>
 </h:body>
 </html>
