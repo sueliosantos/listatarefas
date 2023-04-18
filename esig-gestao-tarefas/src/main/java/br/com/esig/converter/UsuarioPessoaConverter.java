@@ -6,9 +6,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
- 
+import br.com.esig.managedBean.TarefaBean;
 import br.com.esig.model.UsuarioPessoa;
-import br.com.managedBean.TarefaBean;
 
 @FacesConverter(value = "usuarioPessoaConverter")
 public class UsuarioPessoaConverter implements Converter {

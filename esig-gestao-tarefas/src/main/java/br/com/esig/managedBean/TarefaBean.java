@@ -1,4 +1,4 @@
-package br.com.managedBean;
+package br.com.esig.managedBean;
 
 import java.util.ArrayList;
 import java.util.List;
